@@ -62,6 +62,8 @@ export type Color = {
     temperature: (Color) -> number,
     kelvin: (Color) -> number,
     temp: (Color) -> number,
+    -- roblox
+    roblox: (Color) -> Color3,
 
     -- OPS
     -- alpha

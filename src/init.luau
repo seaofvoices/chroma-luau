@@ -25,6 +25,10 @@ require('./io/rgb')
 require('./io/temp')
 require('./io/oklab')
 require('./io/oklch')
+-- deviation: add roblox Color3 support
+if _G.LUA_ENV == 'roblox' then
+    require('./io/roblox')
+end
 
 -- operators --> modify existing Colors
 require('./ops/alpha')

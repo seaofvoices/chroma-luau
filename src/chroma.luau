@@ -57,6 +57,8 @@ export type Chroma = ((...any) -> Color) & {
     temperature: (number) -> Color,
     kelvin: (number) -> Color,
     temp: (number) -> Color,
+    -- roblox Color3
+    roblox: (Color3, opacity: number?) -> Color,
 
     -- generators -- > create new colors
     average: (colors: { AsColor }, mode: string?, weights: { number }?) -> Color,
