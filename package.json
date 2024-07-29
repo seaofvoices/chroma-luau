@@ -1,0 +1,45 @@
+{
+  "name": "chroma-luau",
+  "version": "2.4.2",
+  "description": "A Luau library for color manipulation",
+  "license": "MIT",
+  "author": "Gregor Aisch",
+  "contributors": [
+    "jeparlefrancais <jeparlefrancais21@gmail.com>"
+  ],
+  "homepage": "https://github.com/seaofvoices/chroma-luau#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seaofvoices/chroma-luau.git"
+  },
+  "main": "src/init.luau",
+  "keywords": [
+    "luau",
+    "roblox",
+    "color"
+  ],
+  "scripts": {
+    "build": "sh ./scripts/build.sh",
+    "clean": "rm -rf node_modules build temp",
+    "format": "stylua .",
+    "lint": "sh ./scripts/analyze.sh && selene src",
+    "lint:luau": "sh ./scripts/analyze.sh",
+    "lint:selene": "selene src",
+    "prepare": "npmluau",
+    "style-check": "stylua . --check",
+    "test:roblox": "sh ./scripts/roblox-test.sh",
+    "verify-pack": "yarn pack --dry-run"
+  },
+  "dependencies": {
+    "@jsdotlua/collections": "^1.2.7",
+    "@jsdotlua/number": "^1.2.7",
+    "@jsdotlua/string": "^1.2.7",
+    "luau-regexp": "^0.2.1"
+  },
+  "devDependencies": {
+    "@jsdotlua/jest": "^3.6.1-rc.2",
+    "@jsdotlua/jest-globals": "^3.6.1-rc.2",
+    "npmluau": "^0.1.1"
+  },
+  "packageManager": "yarn@4.3.1"
+}
