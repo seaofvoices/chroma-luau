@@ -1,6 +1,7 @@
 -- ROBLOX upstream: https://github.com/gka/chroma.js/blob/cd1b3c0926c7a85cbdc3b1453b3a94006de91a92/src/chroma.js
 local BlendTypes = require('./types/blend-types')
 local Color = require('./Color')
+local CubehelixTypes = require('./types/cubehelix-types')
 local InterpolationMode = require('./types/interpolation-mode')
 local ScaleTypes = require('./types/scale-types')
 local analyze = require('./utils/analyze')
@@ -9,7 +10,8 @@ export type Color = Color.Color
 export type AsColor = Color.AsColor
 export type ColorMode = Color.ColorMode
 type Blend = BlendTypes.Blend
-type Scale = ScaleTypes.Scale
+export type Cubehelix = CubehelixTypes.Cubehelix
+export type Scale = ScaleTypes.Scale
 type AnalyzeResult = analyze.AnalyzeResult
 export type InterpolationMode = InterpolationMode.InterpolationMode
 
@@ -64,7 +66,13 @@ export type Chroma = ((...any) -> Color) & {
     average: (colors: { AsColor }, mode: string?, weights: { number }?) -> Color,
     bezier: (colors: { AsColor }) -> ((number) -> Color) & { scale: Scale },
     blend: Blend,
-    cubehelix: () -> (),
+    cubehelix: (
+        start: number?,
+        rotations: number?,
+        hue: number | { number }?,
+        gamma: number?,
+        lightness: number | { number }?
+    ) -> Cubehelix,
     mix: (col1: AsColor, col2: AsColor, f: number?, mode: InterpolationMode?) -> Color,
     interpolate: (col1: AsColor, col2: AsColor, f: number?, mode: InterpolationMode?) -> Color,
     random: () -> Color,

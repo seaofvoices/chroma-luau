@@ -17,7 +17,26 @@ export type ScaleBase<T, E> = ScaleFn<T> & E & {
     spread: (() -> number) & ((number) -> ScaleBase<T, E>),
     correctLightness: (boolean?) -> ScaleBase<T, E>,
     padding: (() -> { number }) & ((number | { number }) -> ScaleBase<T, E>),
-    colors: (() -> { AsColor }) & ((number) -> { string }) & ((number, string?) -> { AsColor }),
+    colors: (() -> { AsColor })
+        & ((number) -> { string })
+        & ((number, 'num' | 'temperature' | 'kelvin' | 'temp') -> { number })
+        & ((number, 'css' | 'hex' | 'name' | nil) -> { string })
+        & ((
+            number,
+            'cmyk'
+                | 'gl'
+                | 'hcg'
+                | 'hsi'
+                | 'hsl'
+                | 'hsv'
+                | 'lab'
+                | 'lch'
+                | 'hcl'
+                | 'oklab'
+                | 'oklch'
+                | 'rgb'
+                | 'rgba'
+        ) -> { { number } }),
     cache: (() -> boolean) & ((boolean) -> ScaleBase<T, E>),
     gamma: (() -> number) & ((number) -> ScaleBase<T, E>),
     nodata: (() -> Color) & ((AsColor) -> ScaleBase<T, E>),

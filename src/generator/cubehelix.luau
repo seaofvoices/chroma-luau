@@ -2,6 +2,7 @@
 -- cubehelix interpolation
 -- based on D.A. Green "A colour scheme for the display of astronomical intensity images"
 -- http://astron-soc.in/bulletin/11June/289392011.pdf
+local CubehelixTypes = require('../types/cubehelix-types')
 local chroma = require('../chroma')
 local utils = require('../utils')
 
@@ -9,6 +10,7 @@ local clip_rgb, TWOPI = utils.clip_rgb, utils.TWOPI
 local pow, sin, cos = math.pow, math.sin, math.cos
 
 type Color = chroma.Color
+type Cubehelix = CubehelixTypes.Cubehelix
 
 local function cubehelix(
     start_: number?,
@@ -113,13 +115,5 @@ local function cubehelix(
 
     return f :: Cubehelix
 end
-
-export type Cubehelix = ((number) -> Color) & {
-    start: (() -> number) & ((number) -> Cubehelix),
-    rotations: (() -> number) & ((number) -> Cubehelix),
-    gamma: (() -> number) & ((number) -> Cubehelix),
-    hue: (() -> number | { number }) & ((number | { number }) -> Cubehelix),
-    lightness: (() -> { number }) & ((number | { number }) -> Cubehelix),
-}
 
 return cubehelix
