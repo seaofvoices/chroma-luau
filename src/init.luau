@@ -2,7 +2,7 @@ local chroma = require('./chroma')
 
 export type Color = chroma.Color
 export type AsColor = chroma.AsColor
-export type ColorMode = chroma.ColorMode
+export type ColorSpace = chroma.ColorSpace
 export type InterpolationMode = chroma.InterpolationMode
 export type Cubehelix = chroma.Cubehelix
 export type Scale = chroma.Scale

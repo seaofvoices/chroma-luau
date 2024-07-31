@@ -1,8 +1,6 @@
 local ColorTypes = require('./color-types')
 
 type Color = ColorTypes.Color
-type AsColor = ColorTypes.AsColor
-type ColorMode = ColorTypes.ColorMode
 
 export type Cubehelix = ((number) -> Color) & {
     start: (() -> number) & ((number) -> Cubehelix),

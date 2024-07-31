@@ -8,7 +8,7 @@ local analyze = require('./utils/analyze')
 
 export type Color = Color.Color
 export type AsColor = Color.AsColor
-export type ColorMode = Color.ColorMode
+export type ColorSpace = Color.ColorSpace
 type Blend = BlendTypes.Blend
 export type Cubehelix = CubehelixTypes.Cubehelix
 export type Scale = ScaleTypes.Scale

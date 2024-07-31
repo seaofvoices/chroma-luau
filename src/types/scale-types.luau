@@ -4,7 +4,6 @@ local InterpolationMode = require('./interpolation-mode')
 
 type Color = ColorTypes.Color
 type AsColor = ColorTypes.AsColor
-type ColorMode = ColorTypes.ColorMode
 export type InterpolationMode = InterpolationMode.InterpolationMode
 
 type ScaleFn<T> = (number?) -> T
