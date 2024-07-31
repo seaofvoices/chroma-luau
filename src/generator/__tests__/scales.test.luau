@@ -166,7 +166,7 @@ end)
 describe('colorbrewer scale - lowercase', function()
     local topic
     beforeEach(function()
-        topic = { f = scale('rdylgn') }
+        topic = { f = scale(('rdylgn' :: any) :: 'RdYlGn') }
     end)
 
     test('starts white', function()

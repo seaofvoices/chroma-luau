@@ -6,11 +6,13 @@ local Array = Collections.Array
 -- minimal multi-purpose interface
 
 -- @requires utils color analyze
+local BrewerTypes = require('../types/brewer-types')
 local ScaleTypes = require('../types/scale-types')
 local chroma = require('../chroma')
 
 type Color = chroma.Color
 type AsColor = chroma.AsColor
+type ColorBrewerName = BrewerTypes.ColorBrewerName
 export type Scale = ScaleTypes.Scale
 type InterpolationMode = ScaleTypes.InterpolationMode
 
@@ -30,7 +32,7 @@ end
 -- deviation: pre-declare variables
 local __range__
 
-local function scale(colors: string | { AsColor }?): Scale
+local function scale(colors: ColorBrewerName | { AsColor }?): Scale
     -- constructor
     local _mode: InterpolationMode = 'rgb'
     local _nacol = chroma('#ccc')
