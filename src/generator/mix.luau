@@ -18,7 +18,7 @@ local function mix(col1: AsColor, col2: AsColor, f: number?, mode: Interpolation
     -- end
 
     if not interpolator[mode] then
-        error(`interpolation mode {mode} is not defined` .. debug.traceback(''))
+        error(`interpolation mode {mode} is not defined`)
     end
 
     -- deviation: easier to simply pass through the constructor instead

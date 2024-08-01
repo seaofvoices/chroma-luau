@@ -9,7 +9,7 @@ local _input = require('./io/input')
 
 export type Color = ColorTypes.Color
 export type AsColor = ColorTypes.AsColor
-export type ColorMode = ColorTypes.ColorMode
+export type ColorSpace = ColorTypes.ColorSpace
 export type PrivateColor = ColorTypes.PrivateColor
 
 type ColorStatic = {

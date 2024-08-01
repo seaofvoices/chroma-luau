@@ -60,7 +60,7 @@ local function hex2rgb(hex: string): { number }
     -- if _input.css? and rgb = _input.css hex
     --     return rgb
 
-    error(`unknown hex color: {hex}` .. debug.traceback(''))
+    error(`unknown hex color: {hex}`)
 end
 
 return hex2rgb

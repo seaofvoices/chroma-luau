@@ -2,7 +2,7 @@ local InterpolationMode = require('./interpolation-mode')
 
 export type InterpolationMode = InterpolationMode.InterpolationMode
 
-export type ColorMode =
+export type ColorSpace =
     'cmyk'
     | 'css'
     | 'gl'
