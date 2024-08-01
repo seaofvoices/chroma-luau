@@ -210,7 +210,7 @@ chroma('white'):hsv()
 
 ## color:hsi()
 
-Returns an array with the `hue`, `saturation`, and `intensity` components, each as number between 0 and 255. Note that for hue-less colors (black, white, and grays), the hue component will be NaN.
+Returns an array with the `hue`, `saturation`, and `intensity` components. Hue is the color angle in degree (`0..360`), saturation and intensity are within `0..1`. Note that for hue-less colors (black, white, and grays), the hue component will be NaN.
 
 ```lua
 chroma('orange'):hsi()
