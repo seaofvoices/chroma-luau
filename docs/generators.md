@@ -2,7 +2,7 @@
 
 ### chroma.mix(color1, color2, ratio=0.5, mode='lrgb')
 
-Mixes two colors. The mix *ratio* is a value between 0 and 1.
+Mixes two colors. The mix _ratio_ is a value between 0 and 1.
 
 ```lua
 chroma.mix('red', 'blue')
@@ -19,7 +19,6 @@ chroma.mix('red', 'blue', 0.5, 'lab')
 chroma.mix('red', 'blue', 0.5, 'lch')
 chroma.mix('red', 'blue', 0.5, 'lrgb')
 ```
-
 
 ### chroma.average(colors, mode='lrgb', weights=[])
 
@@ -49,7 +48,6 @@ chroma.average(colors, 'lch', [1,1,2,1])
 chroma.average(colors, 'lch', [1.5,0.5,1,2.3])
 ```
 
-
 ### chroma.blend(color1, color2, mode)
 
 Blends two colors using RGB channel-wise blend functions. Valid blend modes are `multiply`, `darken`, `lighten`, `screen`, `overlay`, `burn`, and `dodge`.
@@ -62,7 +60,7 @@ chroma.blend('4CBBFC', 'EEEE22', 'lighten')
 
 ### chroma.random()
 
-Creates a random color by generating a [random hexadecimal string](https://github.com/gka/chroma.js/blob/master/src/generator/random.coffee#L3-L7).
+Creates a random color by generating a [random hexadecimal string](https://github.com/gka/chroma.js/blob/main/src/generator/random.js).
 
 ```lua
 chroma.random()
@@ -82,7 +80,6 @@ f(0.75)
 ```
 
 You can pass an array of colors to `chroma.scale`. Any color that can be read by `chroma()` will work here, too. If you pass more than two colors, they will be evenly distributed along the gradient.
-
 
 ```lua
 chroma.scale(['yellow', '008ae5'])
@@ -107,7 +104,6 @@ You can use the domain to set the exact positions of each color.
 chroma.scale(['yellow', 'lightgreen', '008ae5'])
     .domain([0,0.25,1])
 ```
-
 
 ### scale.mode(mode)
 
@@ -151,7 +147,7 @@ chroma.scale('YlGn').gamma(2)
 
 ### scale.correctLightness
 
-This makes sure the lightness range is spread evenly across a color scale. Especially useful when working with [multi-hue color scales](https://www.vis4.net/blog/2013/09/mastering-multi-hued-color-scales/), where simple gamma correction can't help you very much.
+This makes sure the lightness range is spread evenly across a color scale. Especially useful when working with [multi-hue color scales](https://www.vis4.net/blog/mastering-multi-hued-color-scales/), where simple gamma correction can't help you very much.
 
 ```lua
 chroma.scale(['black','red','yellow','white'])
@@ -186,7 +182,6 @@ chroma.scale('OrRd')
 chroma.scale('OrRd').padding([0.2, 0])
 ```
 
-
 ### scale.colors(num, format='hex')
 
 You can call `scale.colors(n)` to quickly grab `n` equi-distant colors from a color scale. If called with no arguments, `scale.colors` returns the original array of colors used to create the scale.
@@ -196,7 +191,7 @@ chroma.scale('OrRd').colors(5)
 chroma.scale(['white', 'black']).colors(12)
 ```
 
-If you want to return `chroma` instances just pass *nil* as `format`.
+If you want to return `chroma` instances just pass _nil_ as `format`.
 
 ### scale.classes(numOrArray)
 
@@ -227,7 +222,7 @@ chroma.scale('OrRd').nodata('#eee')(nil)
 
 ### chroma.brewer
 
-chroma.js includes the definitions from [ColorBrewer2.org](http://colorbrewer2.org/). Read more about these colors [in the corresponding paper](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.361.6082&rep=rep1&type=pdf) by Mark Harrower and Cynthia A. Brewer.
+chroma.js includes the definitions from [ColorBrewer2.org](http://colorbrewer2.org/). Read more about these colors [in the corresponding paper](https://www.cs.rpi.edu/~cutler/classes/visualization/S18/papers/colorbrewer.pdf) by Mark Harrower and Cynthia A. Brewer.
 
 ```lua
 chroma.scale('YlGnBu')
@@ -248,7 +243,7 @@ chroma.brewer.OrRd
 
 ### chroma.bezier(colors)
 
-`chroma.bezier` returns a function that [bezier-interpolates between colors](https://www.vis4.net/blog/posts/mastering-multi-hued-color-scales/) in `Lab` space. The input range of the function is `[0..1]`.
+`chroma.bezier` returns a function that [bezier-interpolates between colors](https://www.vis4.net/blog/mastering-multi-hued-color-scales/) in `Lab` space. The input range of the function is `[0..1]`.
 
 ```lua
 -- linear interpolation
@@ -266,10 +261,10 @@ chroma.bezier({'yellow', 'red', 'black'})
 ```
 
 ## cubehelix
+
 ### chroma.cubehelix(start=300, rotations=-1.5, hue=1, gamma=1, lightness=[0,1])
 
 Dave Green's [cubehelix color scheme](http://www.mrao.cam.ac.uk/~dag/CUBEHELIX/)!!
-
 
 ```lua
 -- use the default helix...
@@ -322,14 +317,13 @@ chroma.cubehelix().gamma(0.5)
 
 ### cubehelix.lightness(range)
 
-lightness range: default: {0, 1}  (black -> white)
+lightness range: default: {0, 1} (black -> white)
 
 ```lua
 chroma.cubehelix().lightness({0, 1})
 chroma.cubehelix().lightness({1, 0})
 chroma.cubehelix().lightness({0.3, 0.7})
 ```
-
 
 ### cubehelix.scale
 
