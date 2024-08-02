@@ -2,33 +2,33 @@
 
 This page highlights the various methods available on Color objects. For information about how to construct a color object, read the [constructors](./constructors.md) page.
 
-- [alpha](#coloralphaa)
-- [darken](#colordarkenvalue1)
-- [brighten](#colorbrightenvalue1)
-- [saturate](#colorsaturatevalue1)
-- [desaturate](#colordesaturatevalue1)
-- [set](#colorsetchannel-value)
-- [get](#colorgetchannel)
-- [luminance](#colorluminancelum-modergb)
-- [hex](#colorhexmodeautorgbrgba)
-- [rgb](#colorrgbaroundtrue)
-- [rgba](#colorrgbaroundtrue)
-- [hsl](#colorhsl)
-- [hsv](#colorhsv)
-- [hsi](#colorhsi)
-- [lab](#colorlab)
-- [oklab](#coloroklab)
-- [lch](#colorlch)
-- [hcl](#colorhcl)
-- [oklch](#coloroklch)
-- [num](#colornum)
-- [temperature](#colortemperature)
-- [gl](#colorgl)
-- [clipped](#colorclipped)
+-   [alpha](#coloralphaa)
+-   [darken](#colordarkenvalue1)
+-   [brighten](#colorbrightenvalue1)
+-   [saturate](#colorsaturatevalue1)
+-   [desaturate](#colordesaturatevalue1)
+-   [set](#colorsetchannel-value)
+-   [get](#colorgetchannel)
+-   [luminance](#colorluminancelum-modergb)
+-   [hex](#colorhexmodeautorgbrgba)
+-   [rgb](#colorrgbaroundtrue)
+-   [rgba](#colorrgbaroundtrue)
+-   [hsl](#colorhsl)
+-   [hsv](#colorhsv)
+-   [hsi](#colorhsi)
+-   [lab](#colorlab)
+-   [oklab](#coloroklab)
+-   [lch](#colorlch)
+-   [hcl](#colorhcl)
+-   [oklch](#coloroklch)
+-   [num](#colornum)
+-   [temperature](#colortemperature)
+-   [gl](#colorgl)
+-   [clipped](#colorclipped)
 
 ## color:alpha(a)
 
-Get and set the color opacity using ``color.alpha``.
+Get and set the color opacity using `color.alpha`.
 
 ```lua
 chroma('red'):alpha(0.5)
@@ -74,7 +74,6 @@ chroma('hotpink').desaturate()
 chroma('hotpink').desaturate(2)
 chroma('hotpink').desaturate(3)
 ```
-
 
 ## color:set(channel, value)
 
@@ -233,7 +232,6 @@ Returns an array with the **L**, **a**, and **b** components.
 chroma('orange'):oklab()
 ```
 
-
 ## color:lch()
 
 Returns an array with the **Lightness**, **chroma**, and **hue** components.
@@ -244,7 +242,7 @@ chroma('skyblue'):lch()
 
 ## color:hcl()
 
-Alias of [lch](#color-lch), but with the components in reverse order.
+Alias of [lch](#colorlch), but with the components in reverse order.
 
 ```lua
 chroma('skyblue'):hcl()

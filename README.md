@@ -12,10 +12,10 @@ This library is a translation of [chroma.js](https://github.com/gka/chroma.js).
 
 ## [Documentation](./docs/index.md)
 
-- [color constructors](./constructors.md)
-- [manipulate the color object and convert into different color spaces](./color.md)
-- [generate colors and scales](./generators.md)
-- [utils](./utils.md)
+-   [color constructors](./docs/constructors.md)
+-   [manipulate the color object and convert into different color spaces](./docs/color.md)
+-   [generate colors and scales](./docs/generators.md)
+-   [utils](./docs/utils.md)
 
 ## Installation
 
@@ -33,10 +33,10 @@ npm install chroma-luau
 
 ## Releases
 
-Versions of chroma-luau are also pre-built and linked to [GitHub releases](https://github.com/seaofvoices/luau-disk/releases):
+Versions of chroma-luau are also pre-built and linked to [GitHub releases](https://github.com/seaofvoices/chroma-luau/releases):
 
-- `chroma.rbxm` is a Roblox model file
-- `chroma.lua` is a single-file version of the library (with Luau type annotations removed)
+-   `chroma.rbxm` is a Roblox model file
+-   `chroma.lua` is a single-file version of the library (with Luau type annotations removed)
 
 ## Other Lua Environments Support
 
