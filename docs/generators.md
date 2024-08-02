@@ -35,7 +35,7 @@ chroma.average(colors, 'lch')
 Also works with alpha channels.
 
 ```lua
-chroma.average({'red', 'rgba(0,0,0,0.5)'}).css()
+chroma.average({'red', 'rgba(0,0,0,0.5)'}):css()
 ```
 
 As of version 2.1 you can also provide an array of `weights` to

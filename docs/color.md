@@ -40,9 +40,9 @@ chroma('rgba(255,0,0,0.35)'):alpha()
 Once loaded, chroma.js can change colors. One way we already saw above, you can change the lightness.
 
 ```lua
-chroma('hotpink').darken()
-chroma('hotpink').darken(2)
-chroma('hotpink').darken(2.6)
+chroma('hotpink'):darken()
+chroma('hotpink'):darken(2)
+chroma('hotpink'):darken(2.6)
 ```
 
 ## color:brighten(value=1)
@@ -50,9 +50,9 @@ chroma('hotpink').darken(2.6)
 Similar to `darken`, but the opposite direction
 
 ```lua
-chroma('hotpink').brighten()
-chroma('hotpink').brighten(2)
-chroma('hotpink').brighten(3)
+chroma('hotpink'):brighten()
+chroma('hotpink'):brighten(2)
+chroma('hotpink'):brighten(3)
 ```
 
 ## color:saturate(value=1)
@@ -60,9 +60,9 @@ chroma('hotpink').brighten(3)
 Changes the saturation of a color by manipulating the Lch chromaticity.
 
 ```lua
-chroma('slategray').saturate()
-chroma('slategray').saturate(2)
-chroma('slategray').saturate(3)
+chroma('slategray'):saturate()
+chroma('slategray'):saturate(2)
+chroma('slategray'):saturate(3)
 ```
 
 ## color:desaturate(value=1)
@@ -70,9 +70,9 @@ chroma('slategray').saturate(3)
 Similar to `saturate`, but the opposite direction.
 
 ```lua
-chroma('hotpink').desaturate()
-chroma('hotpink').desaturate(2)
-chroma('hotpink').desaturate(3)
+chroma('hotpink'):desaturate()
+chroma('hotpink'):desaturate(2)
+chroma('hotpink'):desaturate(3)
 ```
 
 ## color:set(channel, value)
@@ -284,7 +284,7 @@ chroma('#b3ccff'):temperature()
 Like RGB, but in the channel range of `[0..1]` instead of `[0..255]`
 
 ```lua
-chroma('33cc00').gl()
+chroma('33cc00'):gl()
 ```
 
 ## color:clipped()
@@ -307,6 +307,6 @@ print(c:clipped())
 As a bonus feature you can access the unclipped RGB components using `color._rgb._unclipped`.
 
 ```lua
-chroma.hcl(50, 40, 100).rgb()
+chroma.hcl(50, 40, 100):rgb()
 chroma.hcl(50, 40, 100)._rgb._unclipped
 ```
