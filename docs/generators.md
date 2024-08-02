@@ -2,7 +2,7 @@
 
 ### chroma.mix(color1, color2, ratio=0.5, mode='lrgb')
 
-Mixes two colors. The mix _ratio_ is a value between 0 and 1.
+Mixes two colors. The mix *ratio* is a value between 0 and 1.
 
 ```lua
 chroma.mix('red', 'blue')
@@ -191,7 +191,7 @@ chroma.scale('OrRd').colors(5)
 chroma.scale({'white', 'black'}).colors(12)
 ```
 
-If you want to return `chroma` instances just pass _nil_ as `format`.
+If you want to return `chroma` instances just pass *nil* as `format`.
 
 ### scale.classes(numOrArray)
 
@@ -261,7 +261,6 @@ chroma.bezier({'yellow', 'red', 'black'})
 ```
 
 ## cubehelix
-
 ### chroma.cubehelix(start=300, rotations=-1.5, hue=1, gamma=1, lightness=[0,1])
 
 Dave Green's [cubehelix color scheme](http://www.mrao.cam.ac.uk/~dag/CUBEHELIX/)!!
@@ -317,13 +316,14 @@ chroma.cubehelix().gamma(0.5)
 
 ### cubehelix.lightness(range)
 
-lightness range: default: {0, 1} (black -> white)
+lightness range: default: {0, 1}  (black -> white)
 
 ```lua
 chroma.cubehelix().lightness({0, 1})
 chroma.cubehelix().lightness({1, 0})
 chroma.cubehelix().lightness({0.3, 0.7})
 ```
+
 
 ### cubehelix.scale
 

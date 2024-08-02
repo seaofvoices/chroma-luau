@@ -2,19 +2,19 @@
 
 This page highlights the various ways to create color objects. For information about the methods of color objects, read the [color](./color.md) page.
 
--   [chroma](#chromacolor)
--   [hsl](#chromahslhue-saturation-lightness)
--   [hsv](#chromahsvhue-saturation-value)
--   [lab](#chromalablightness-a-b)
--   [oklab](#chromaoklablightness-a-b)
--   [lch](#chromalchlightness-chroma-hue)
--   [hcl](#chromahclhue-chroma-lightness)
--   [oklch](#chromaoklchlightness-chromacity-hue)
--   [cmyk](#chromacmykcyan-magenta-yellow-black)
--   [gl](#chromaglred-green-blue-alpha)
--   [temperature](#chromatemperaturek)
+- [chroma](#chromacolor)
+- [hsl](#chromahslhue-saturation-lightness)
+- [hsv](#chromahsvhue-saturation-value)
+- [lab](#chromalablightness-a-b)
+- [oklab](#chromaoklablightness-a-b)
+- [lch](#chromalchlightness-chroma-hue)
+- [hcl](#chromahclhue-chroma-lightness)
+- [oklch](#chromaoklchlightness-chromacity-hue)
+- [cmyk](#chromacmykcyan-magenta-yellow-black)
+- [gl](#chromaglred-green-blue-alpha)
+- [temperature](#chromatemperaturek)
 
-### chroma(_color_)
+### chroma(*color*)
 
 The first step is to get your color into chroma-luau. That's what the generic constructor `chroma()` does. This function attempts to guess the format of the input color for you. For instance, it will recognize any named color from the W3CX11 specification:
 
@@ -43,7 +43,7 @@ chroma(255, 51, 153)
 chroma({255, 51, 153})
 ```
 
-You can construct colors from different color spaces by passing the name of color space as the last argument. Here we define the same color in HSL by passing the h*ue angle (0-360) and percentages for *s*aturation and *l\*ightness:
+You can construct colors from different color spaces by passing the name of color space as the last argument. Here we define the same color in HSL by passing the h*ue angle (0-360) and percentages for *s*aturation and *l*ightness:
 
 ```lua
 chroma(330, 1, 0.6, 'hsl')

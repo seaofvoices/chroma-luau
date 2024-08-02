@@ -2,10 +2,10 @@
 
 Here are a couple of things chroma-luau can do for you:
 
--   read colors from a wide range of formats ([see constructors](./constructors.md))
--   analyze and manipulate colors ([see color object](./color.md) and [utils](./utils.md))
--   convert colors into wide range of formats ([see color object](./color.md))
--   linear and bezier interpolation in different color spaces ([see generators](./generators.md))
+- read colors from a wide range of formats ([see constructors](./constructors.md))
+- analyze and manipulate colors ([see color object](./color.md) and [utils](./utils.md))
+- convert colors into wide range of formats ([see color object](./color.md))
+- linear and bezier interpolation in different color spaces ([see generators](./generators.md))
 
 Here's an example for a simple read / manipulate / output chain:
 
