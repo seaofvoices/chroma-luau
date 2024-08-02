@@ -120,7 +120,7 @@ chroma('black'):luminance()
 chroma.js also allows you to **adjust the luminance** of a color. The source color will be interpolated with black or white until the correct luminance is found.
 
 ```lua
--- set lumincance to 50% for all colors
+-- set luminance to 50% for all colors
 chroma('white'):luminance(0.5)
 chroma('aquamarine'):luminance(0.5)
 chroma('hotpink'):luminance(0.5)
