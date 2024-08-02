@@ -40,7 +40,7 @@ You also can pass RGB values individually. Each parameter must be within `0..255
 ```lua
 chroma(0xff, 0x33, 0x99)
 chroma(255, 51, 153)
-chroma([255, 51, 153])
+chroma({255, 51, 153})
 ```
 
 You can construct colors from different color spaces by passing the name of color space as the last argument. Here we define the same color in HSL by passing the h*ue angle (0-360) and percentages for *s*aturation and *l*ightness:
@@ -133,7 +133,7 @@ chroma(0.6, 0, 0.8, 'gl')
 
 ### chroma.temperature(K)
 
-Returns a color from the [color temperature](http://www.zombieprototypes.com/?p=210) scale. Based on [Neil Bartlett's implementation](https://github.com/neilbartlett/color-temperature).
+Returns a color from the [color temperature](https://web.archive.org/web/20220618201011/http://www.zombieprototypes.com/?p=210) scale. Based on [Neil Bartlett's implementation](https://github.com/neilbartlett/color-temperature).
 
 ```lua
 chroma.temperature(2000) -- candle light
