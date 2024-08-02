@@ -25,7 +25,7 @@ chroma.mix('red', 'blue', 0.5, 'lrgb')
 Similar to `chroma.mix`, but accepts more than two colors. Simple averaging of R,G,B components and the alpha channel.
 
 ```lua
-colors = ['#ddd', 'yellow', 'red', 'teal']
+colors = {'#ddd', 'yellow', 'red', 'teal'}
 chroma.average(colors) -- lrgb
 chroma.average(colors, 'rgb')
 chroma.average(colors, 'lab')
@@ -35,17 +35,17 @@ chroma.average(colors, 'lch')
 Also works with alpha channels.
 
 ```lua
-chroma.average(['red', 'rgba(0,0,0,0.5)']).css()
+chroma.average({'red', 'rgba(0,0,0,0.5)'}).css()
 ```
 
 As of version 2.1 you can also provide an array of `weights` to
 compute a **weighted average** of colors.
 
 ```lua
-colors = ['#ddd', 'yellow', 'red', 'teal']
+colors = {'#ddd', 'yellow', 'red', 'teal'}
 chroma.average(colors, 'lch') -- unweighted
-chroma.average(colors, 'lch', [1,1,2,1])
-chroma.average(colors, 'lch', [1.5,0.5,1,2.3])
+chroma.average(colors, 'lch', {1,1,2,1})
+chroma.average(colors, 'lch', {1.5,0.5,1,2.3})
 ```
 
 ### chroma.blend(color1, color2, mode)
@@ -82,8 +82,8 @@ f(0.75)
 You can pass an array of colors to `chroma.scale`. Any color that can be read by `chroma()` will work here, too. If you pass more than two colors, they will be evenly distributed along the gradient.
 
 ```lua
-chroma.scale(['yellow', '008ae5'])
-chroma.scale(['yellow', 'red', 'black'])
+chroma.scale({'yellow', '008ae5'})
+chroma.scale({'yellow', 'red', 'black'})
 ```
 
 ### scale.domain(domain)
@@ -92,17 +92,17 @@ You can change the input domain to match your specific use case.
 
 ```lua
 -- default domain is [0,1]
-chroma.scale(['yellow', '008ae5'])
+chroma.scale({'yellow', '008ae5'})
 -- set domain to [0,100]
-chroma.scale(['yellow', '008ae5']).domain([0,100])
+chroma.scale({'yellow', '008ae5'}).domain({0,100})
 ```
 
 You can use the domain to set the exact positions of each color.
 
 ```lua
 -- default domain is [0,1]
-chroma.scale(['yellow', 'lightgreen', '008ae5'])
-    .domain([0,0.25,1])
+chroma.scale({'yellow', 'lightgreen', '008ae5'})
+    .domain({0,0.25,1})
 ```
 
 ### scale.mode(mode)
@@ -110,29 +110,29 @@ chroma.scale(['yellow', 'lightgreen', '008ae5'])
 As with `chroma.mix`, the result of the color interpolation will depend on the color mode in which the channels are interpolated. The default mode is `RGB`:
 
 ```lua
-chroma.scale(['yellow', '008ae5'])
+chroma.scale({'yellow', '008ae5'})
 ```
 
 This is often fine, but sometimes, two-color `RGB` gradients goes through kind of grayish colors, and `Lab` interpolation produces better results:
 
 ```lua
-chroma.scale(['yellow', 'navy'])
-chroma.scale(['yellow', 'navy']).mode('lab')
+chroma.scale({'yellow', 'navy'})
+chroma.scale({'yellow', 'navy'}).mode('lab')
 ```
 
 Also note how the RGB interpolation can get very dark around the center. You can achieve better results using [linear RGB interpolation](https://www.youtube.com/watch?v=LKnqECcg6Gw):
 
 ```lua
-chroma.scale(['#f00', '#0f0'])
-chroma.scale(['#f00', '#0f0']).mode('lrgb')
+chroma.scale({'#f00', '#0f0'})
+chroma.scale({'#f00', '#0f0'}).mode('lrgb')
 ```
 
 Other useful interpolation modes could be `HSL` or `Lch`, though both tend to produce too saturated / glowing gradients.
 
 ```lua
-chroma.scale(['yellow', 'navy']).mode('lab')
-chroma.scale(['yellow', 'navy']).mode('hsl')
-chroma.scale(['yellow', 'navy']).mode('lch')
+chroma.scale({'yellow', 'navy'}).mode('lab')
+chroma.scale({'yellow', 'navy'}).mode('hsl')
+chroma.scale({'yellow', 'navy'}).mode('lch')
 ```
 
 ### scale.gamma
@@ -150,9 +150,9 @@ chroma.scale('YlGn').gamma(2)
 This makes sure the lightness range is spread evenly across a color scale. Especially useful when working with [multi-hue color scales](https://www.vis4.net/blog/mastering-multi-hued-color-scales/), where simple gamma correction can't help you very much.
 
 ```lua
-chroma.scale(['black','red','yellow','white'])
+chroma.scale({'black','red','yellow','white'})
 
-chroma.scale(['black','red','yellow','white'])
+chroma.scale({'black','red','yellow','white'})
     .correctLightness()
 ```
 
@@ -161,7 +161,7 @@ chroma.scale(['black','red','yellow','white'])
 By default `chroma.scale` instances will cache each computed value => color pair. You can turn off the cache by setting
 
 ```lua
-chroma.scale(['yellow', '008ae5']).cache(false)
+chroma.scale({'yellow', '008ae5'}).cache(false)
 ```
 
 ### scale.padding(pad)
@@ -179,7 +179,7 @@ Alternatively you can specify the padding for each sides individually by passing
 
 ```lua
 chroma.scale('OrRd')
-chroma.scale('OrRd').padding([0.2, 0])
+chroma.scale('OrRd').padding({0.2, 0})
 ```
 
 ### scale.colors(num, format='hex')
@@ -188,7 +188,7 @@ You can call `scale.colors(n)` to quickly grab `n` equi-distant colors from a co
 
 ```lua
 chroma.scale('OrRd').colors(5)
-chroma.scale(['white', 'black']).colors(12)
+chroma.scale({'white', 'black'}).colors(12)
 ```
 
 If you want to return `chroma` instances just pass _nil_ as `format`.
@@ -334,7 +334,7 @@ chroma.cubehelix()
     .start(200)
     .rotations(-0.35)
     .gamma(0.7)
-    .lightness([0.3, 0.8])
+    .lightness({0.3, 0.8})
   .scale() -- convert to chroma.scale
     .correctLightness()
     .colors(5)
