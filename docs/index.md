@@ -13,7 +13,7 @@ Here's an example for a simple read / manipulate / output chain:
 chroma('pink'):darken():saturate(2):hex()
 ```
 
-Aside from that, chroma-luau can also help you **generate nice colors** using various methods, for instance to be [used](https://www.vis4.net/blog/posts/avoid-equidistant-hsv-colors/) in color palette for maps or data visualization.
+Aside from that, chroma-luau can also help you **generate nice colors** using various methods, for instance to be [used](https://www.vis4.net/blog/avoid-equidistant-hsv-colors/) in color palette for maps or data visualization.
 
 ```lua
 chroma.scale({'#fafa6e','#2A4858'})
